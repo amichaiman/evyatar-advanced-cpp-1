@@ -13,8 +13,11 @@ class Tackle : public DefenseObj {
 public:
     Tackle(int dimension);
 
+    DefenseObj *clone() const override;
+
 protected:
-    char getInitial() override;
+    char getInitial() const override;
+
 };
 
 

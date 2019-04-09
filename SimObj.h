@@ -10,8 +10,9 @@ class SimObj {
 public:
     explicit SimObj(int dimension);
 
-    bool get(int i);
-    void set(int i, bool val);
+    unsigned long size() const;
+    bool get(unsigned long i) const;
+    void set(unsigned long i, bool val);
     void print() const;
 private:
     vector<bool> v;

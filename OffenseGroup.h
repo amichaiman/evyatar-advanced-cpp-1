@@ -15,6 +15,7 @@ class OffenseGroup {
 public:
     void initialize(int dimension, ifstream &offense_file);
 
+    const vector<SimObj *> &get_offense_group() const;
     void print();
 
 private:

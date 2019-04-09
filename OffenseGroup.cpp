@@ -13,7 +13,9 @@ void OffenseGroup::initialize(int dimension, ifstream &offense_file) {
         throw exception();
     }
     for (int i=0; i<size; i++) {
+        /* create single offense object */
         SimObj* simObj = new SimObj(dimension);
+        /* fill object with data from offense_file */
         for (int j=0; j<dimension; j++) {
             int val;
             offense_file >> val;
@@ -22,6 +24,7 @@ void OffenseGroup::initialize(int dimension, ifstream &offense_file) {
             }
             simObj->set(j, static_cast<bool>(val));
         }
+        /* add to group */
         offense_group.push_back(simObj);
     }
 }
@@ -31,4 +34,8 @@ void OffenseGroup::print() {
         obj->print();
         cout << endl;
     }
+}
+
+const vector<SimObj *> &OffenseGroup::get_offense_group() const {
+    return offense_group;
 }

@@ -36,7 +36,6 @@ void Simulation::load(char *config_filename, char *offense_filename) {
 }
 
 void Simulation::start() {
-    defense_group.print();
-    cout << endl << endl;
-    offense_group.print();
+    for (int i=0; i<num_iterations && !defense_group.update(offense_group); i++) {
+    }
 }

@@ -7,11 +7,11 @@
 
 using namespace std;
 
-bool SimObj::get(int i) {
+bool SimObj::get(unsigned long i) const {
     return v.at(i);
 }
 
-void SimObj::set(int i, bool val) {
+void SimObj::set(unsigned long i, bool val) {
     v.at(i) = val;
 }
 
@@ -22,4 +22,8 @@ void SimObj::print() const {
 }
 
 SimObj::SimObj(int dimension):v(static_cast<unsigned long>(dimension)) {
+}
+
+unsigned long SimObj::size() const {
+    return v.size();
 }

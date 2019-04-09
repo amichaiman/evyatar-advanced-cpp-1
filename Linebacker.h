@@ -13,8 +13,10 @@ class Linebacker : public DefenseObj {
 public:
     Linebacker(int dimension);
 
+    virtual DefenseObj *clone() const override;
 protected:
-    char getInitial() override;
+    char getInitial() const override;
+
 };
 
 

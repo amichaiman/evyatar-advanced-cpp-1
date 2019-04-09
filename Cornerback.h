@@ -11,9 +11,10 @@
 class Cornerback : public DefenseObj{
 public:
     Cornerback(int dimension);
+    virtual DefenseObj *clone() const override;
 
 protected:
-    char getInitial() override;
+    char getInitial() const override;
 };
 
 
